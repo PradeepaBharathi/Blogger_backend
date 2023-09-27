@@ -7,16 +7,7 @@ import cors from "cors";
 const PORT = process.env.PORT;
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "https://calm-squirrel-be28ab.netlify.app",
-      "http://localhost:3000"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use("/", user_router);
